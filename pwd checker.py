@@ -1,12 +1,19 @@
+# inporting needed modules
 import string
 import getpass
 
+# getting imput(password) from user
 def check_pass():
     password = getpass.getpass("Enter the password: ")
     strength=0
     remarks=''
-    lower_count = upper_count = num_count = wspace_count = special_count = 0
-    
+    lower_count =0
+    upper_count = 0
+    num_count =0
+    wspace_count = 0
+    special_count = 0
+
+    #checking all the charecter in the password
     for char in list(password):
         if char in string.ascii_lowercase:
             lower_count+=1
@@ -64,7 +71,7 @@ def ask_pwd(another_pwd=False):
             return False
         else:
             print("Invalid , Try again")
-            
+# main function
 if __name__ == '__main__':
     print("+++ welcome to pwd checker +++ ")
     ask_pw = ask_pwd()
